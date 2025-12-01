@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ai-chatbot-ingress
+  namespace: dev
+spec:
+  rules:
+  - host: chatbot.local  # Your domain/hostname
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: ai-chatbot  # Must match your service name
+            port:
+              number: 8000    # Must match your service port

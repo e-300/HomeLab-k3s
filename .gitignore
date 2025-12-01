@@ -1,0 +1,39 @@
+#############################################
+# CRITICAL: Never commit plaintext secrets!
+#############################################
+
+# Block ALL plaintext secrets
+*secret.yaml
+*-secret.yml
+
+# BUT allow sealed secrets (encrypted, safe for public repo)
+!*sealed-secret.yaml
+!*sealed-secret.yml
+
+# Block private keys
+*.key
+*.pem
+*.crt
+*.csr
+*-key.yaml
+
+# Block any backup or temp files that might contain secrets
+*.bak
+*.tmp
+*.backup
+/tmp/
+
+# IDE files (might contain sensitive paths)
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment files (never commit these!)
+.env
+.env.*
+!.env.example
+
+# Kubeconfig (if you accidentally copy it here)
+kubeconfig
+*.kubeconfig

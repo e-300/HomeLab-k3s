@@ -20,3 +20,10 @@ spec:
           image: prom/prometheus:latest
           ports:
             - containerPort: 9090
+          resources:
+            requests:
+              cpu: "300m"
+              memory: "512Mi"
+            limits:
+              cpu: "700m"
+              memory: "1Gi"

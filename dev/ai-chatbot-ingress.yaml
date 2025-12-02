@@ -3,15 +3,25 @@ kind: Ingress
 metadata:
   name: ai-chatbot-ingress
   namespace: dev
+
+  # Tell Traefik which entrypoint to use (port 80)
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+
 spec:
+  # Tell Kubernetes which ingress controller should process this
+  ingressClassName: traefik
+
   rules:
-  - host: chatbot.local  # Your domain/hostname
+  - host: chatbot.local  # custom hostname
     http:
       paths:
-      - path: /
+      - path: /chat
         pathType: Prefix
+
         backend:
           service:
-            name: ai-chatbot  # Must match your service name
+            name: ai-chatbot   # service name in dev namespace
             port:
-              number: 8000    # Must match your service port
+              number: 8000     # service port
+

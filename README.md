@@ -81,6 +81,10 @@ HOMELAB-K3S/
 ![K3s](https://img.shields.io/badge/K3s-FFC61C?style=for-the-badge&logo=k3s&logoColor=black)
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 
+
+<img width="2443" height="1265" alt="image" src="https://github.com/user-attachments/assets/3ab2923a-e87e-4bab-ba77-af6695cab6a2" />
+
+
 ## 📖 Learning Resources
 
 This setup follows industry best practices from:

@@ -20,6 +20,12 @@ spec:
         image: eb300/ai-agent:latest
         ports:
           - containerPort: 8000 
+        env:
+          - name: ANTHROPIC_API_KEY
+            valueFrom:
+              secretKeyRef:
+                name: ai-chatbot-secret
+                key: ANTHROPIC_API_KEY
         resources:
           requests:
             cpu: "250m"

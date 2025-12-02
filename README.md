@@ -25,27 +25,35 @@ All secrets in this repository are **encrypted using Sealed Secrets**:
 
 ## 📁 Repository Structure
 ```
-.
-├── namespaces/              # Kubernetes namespace definitions
-│   └── namespaces.yaml
-├── secrets/                 # Sealed secrets (encrypted)
-│   ├── development/
-│   ├── staging/
-│   └── production/
-├── deployments/             # Application deployments
-│   ├── development/
-│   ├── staging/
-│   └── production/
-├── services/                # Kubernetes services
-└── argocd/                  # ArgoCD application definitions
-    └── applications/
+HOMELAB-K3S/
+├── argocd/                           # GitOps deployment tool
+├── dev/                              # Development environment
+│   ├── ai-chatbot-deployment.yaml    # AI Chatbot deployment config
+│   ├── ai-chatbot-ingress.yaml       # Ingress rules for AI Chatbot
+│   ├── ai-chatbot-secret-sealed.yaml # Sealed secrets for AI Chatbot
+│   ├── ai-chatbot-service.yaml       # Service definition for AI Chatbot
+│   ├── grafana-deployment.yaml       # Grafana monitoring dashboard
+│   ├── namespace.yaml                # Dev namespace definition
+│   ├── prometheus-deployment.yaml    # Prometheus metrics collector
+│   └── redis-deployment.yaml         # Redis cache deployment
+├── infrastructure/ 
+│   └── traefik-config.yaml           # Traefik ingress controller config
+├── namespaces/                       # Namespace configurations
+├── production/ 
+│   └── namespace.yaml                # Production namespace
+├── staging/ 
+│   └── namespace.yaml                # Staging namespace
+├── .env.example                      # Environment variables template
+├── .gitignore                        # Git ignore rules
+├── LICENSE                           # License file
+└── README.md                        
 ```
 
 ## 🚀 Deployment Flow
 ```
 1. Code change pushed to Git
 2. ArgoCD detects changes automatically
-3. Changes deployed to development namespace
+3. Changes deployed to the development namespace
 4. After testing, promoted to staging
 5. After validation, promoted to production
 ```
@@ -84,6 +92,3 @@ This setup follows industry best practices from:
 
 MIT License - Feel free to use this as a reference for your own homelab!
 
----
-
-**Built with ❤️ for learning and demonstrating modern DevOps practices**

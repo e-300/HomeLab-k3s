@@ -6,7 +6,7 @@ metadata:
 
   # Tell Traefik which entrypoint to use (port 80)
   annotations:
-    traefik.ingress.kubernetes.io/router.entrypoints: web
+    traefik.ingress.kubernetes.io/router.entrypoints: web, websecure
 
 spec:
   # Tell Kubernetes which ingress controller should process this
@@ -23,5 +23,4 @@ spec:
           service:
             name: ai-chatbot   # service name in dev namespace
             port:
-              number: 8000     # service port
-
+              number: 8000     # service port              

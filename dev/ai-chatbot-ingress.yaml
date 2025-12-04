@@ -19,4 +19,4 @@ spec:
               service:
                 name: ai-chatbot # service name in dev namespace
                 port:
-                  number: 8000 # service port              
+                  number: 8000 # service port

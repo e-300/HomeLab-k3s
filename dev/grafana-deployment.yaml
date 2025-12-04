@@ -1,18 +1,18 @@
 apiVersion: apps/v1
-kind: Deployment 
-metadata: 
+kind: Deployment
+metadata:
   name: grafana
   namespace: dev
-  labels: 
+  labels:
     app: grafana
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: grafana
-  template: 
+  template:
     metadata:
-      labels: 
+      labels:
         app: grafana
     spec:
       containers:

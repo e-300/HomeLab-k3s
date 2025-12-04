@@ -3,13 +3,13 @@ kind: Service
 metadata:
   name: ai-chatbot
   namespace: dev
-  labels: 
+  labels:
     app: ai-chatbot
 spec:
   ports:
-  - port: 8000        # Service port
-    protocol: TCP
-    targetPort: 8000  # Container port (from your deployment)
+    - port: 8000 # Service port
+      protocol: TCP
+      targetPort: 8000 # Container port (from your deployment)
   selector:
-    app: ai-chatbot   # Must match deployment labels
-  type: ClusterIP   # Or NodePort for external access
+    app: ai-chatbot # Must match deployment labels
+  type: ClusterIP # Or NodePort for external access

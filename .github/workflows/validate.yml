@@ -1,17 +1,13 @@
 # .github/workflows/validate.yml
 name: Validate Manifests
-
 on: [push, pull_request]
-
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
       - name: Validate YAML
         run: yamllint -d relaxed .
-      
       - name: Validate Kubernetes manifests
         uses: instrumenta/kubeval-action@master
         with:

@@ -1,7 +1,7 @@
 apiVersion: apps/v1
-kind: Deployment 
+kind: Deployment
 metadata:
-  name: redis 
+  name: redis
   namespace: dev
   labels:
     app: redis
@@ -10,9 +10,9 @@ spec:
   selector:
     matchLabels:
       app: redis
-  template: 
+  template:
     metadata:
-      labels: 
+      labels:
         app: redis
     spec:
       containers:

@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: ai-chatbot
   namespace: dev
-  labels:
+  labels: 
     app: ai-chatbot
 spec:
   ports:

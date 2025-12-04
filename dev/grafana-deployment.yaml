@@ -3,7 +3,7 @@ kind: Deployment
 metadata: 
   name: grafana
   namespace: dev
-  labels:
+  labels: 
     app: grafana
 spec:
   replicas: 1

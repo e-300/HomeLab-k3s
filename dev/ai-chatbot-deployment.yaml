@@ -12,7 +12,7 @@ spec:
       app: ai-chatbot
   template: 
     metadata:
-      labels: 
+      labels:
         app: ai-chatbot
     spec:
       containers:

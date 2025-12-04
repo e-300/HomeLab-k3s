@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ai-chatbot-ingress
+  name: ai-chatbot-ingress 
   namespace: dev
 
   # Tell Traefik which entrypoint to use (port 80)
